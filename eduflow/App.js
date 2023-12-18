@@ -3,18 +3,19 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './App/Pages/Login';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import TabNavigation from './App/Navigations/TabNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
     <ClerkProvider publishableKey={'pk_test_YWxpdmUtYWxwYWNhLTcwLmNsZXJrLmFjY291bnRzLmRldiQ'}>
-      <View>
-        <SignedIn>
+      <SignedIn>
+        <NavigationContainer>
           <TabNavigation />
-        </SignedIn>
-        <SignedOut>
-        <Login />
-        </SignedOut>
-      </View>
+        </NavigationContainer>
+      </SignedIn>
+      <SignedOut>
+      <Login />
+      </SignedOut>
     </ClerkProvider>
   );
 }
@@ -23,7 +24,6 @@ export default function App() {
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      marginTop: 20
     },
   });
