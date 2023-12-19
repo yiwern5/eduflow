@@ -3,7 +3,7 @@ import React from 'react'
 import OptionItem from './OptionItem'
 import Colors from '../../Shared/Colors'
 
-export default function DetailsSection({course}) {
+export default function DetailsSection({course, userEnrolledCourse, enrollCourse}) {
   return (
     <View style={{padding:10, borderRadius:15, backgroundColor:Colors.white}}>
       <Image source={{uri:course?.banner?.url}} style={{width:Dimensions.get('screen').width*0.85, height:190, borderRadius:15}}/>
@@ -20,12 +20,15 @@ export default function DetailsSection({course}) {
         </View>
         <View>
             <Text style={{fontSize:20, fontWeight:'bold', marginTop:10, marginBottom:5}}>Description</Text>
-            <Text style={{color:Colors.gray}}>{course.description?.markdown}</Text>
+            <Text style={{color:Colors.gray, textAlign:'justify'}}>{course.description?.markdown}</Text>
         </View>
-        <View style={{display:'flex', flexDirection:'row', gap:10}}>
-            <TouchableOpacity style={{padding:15, backgroundColor:Colors.primary, borderRadius:15}}>
+        <View style={{display:'flex', flexDirection:'row', gap:10, justifyContent:'center'}}>
+          {userEnrolledCourse?.length==0? 
+            <TouchableOpacity 
+            onPress={()=>enrollCourse()}
+            style={{padding:15, backgroundColor:Colors.primary, borderRadius:15}}>
                 <Text style={{textAlign:'center', fontWeight:'bold'}}>Enroll for Free</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> : null}
             <TouchableOpacity style={{padding:15, backgroundColor:Colors.secondary, borderRadius:15}}>
                 <Text style={{textAlign:'center', fontWeight:'bold'}}>Membership $2.99/Mon</Text>
             </TouchableOpacity>

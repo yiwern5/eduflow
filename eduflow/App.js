@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './App/Pages/Login';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
