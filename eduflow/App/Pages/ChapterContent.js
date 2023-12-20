@@ -7,14 +7,19 @@ import Colors from '../Shared/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { MarkChapterCompleted } from '../Services';
 import { CompleteChapterContext } from '../Assets/Context/CompleteChapterContext';
+import { useUser } from '@clerk/clerk-expo';
+import { UserPointsContext } from '../Assets/Context/UserPointsContext';
 
 export default function ChapterContent() {
     const params=useRoute().params;
     const [isRun, setIsRun]=useState(false);
     const navigation=useNavigation();
+    const {user}=useUser();
     const {IsChapComplete, setIsChapComplete}=useContext(CompleteChapterContext);
+    const {userPoints, setUserPoints}=useContext(UserPointsContext);
     const markCompleted=()=>{
-        MarkChapterCompleted(params.chapterid, params.courseid);
+        const totalCoins=Number(userPoints)+10;
+        MarkChapterCompleted(params.chapterid, params.courseid, user.primaryEmailAddress.emailAddress, totalCoins);
         setIsChapComplete(true);
         navigation.goBack();
     }

@@ -1,11 +1,13 @@
 import { View, Text, Image, StyleSheet, TextInput } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useUser } from '@clerk/clerk-expo'
 import Coin from './../Images/coin.png'
 import { Ionicons } from '@expo/vector-icons';
+import { UserPointsContext } from '../Context/UserPointsContext';
 
 export default function Header() {
     const {isLoaded, isSignedIn, user}=useUser();
+    const {userPoints, setUserPoints}=useContext(UserPointsContext);
   return isLoaded&&(
     <View>
         <View style={[{justifyContent:'space-between'}, styles.rowStyle]}>
@@ -19,7 +21,7 @@ export default function Header() {
             </View>
             <View style={styles.rowStyle}>
                 <Image source={Coin} style={{width:30, height:30}}/>
-                <Text style={{fontSize:18}}>5555</Text>
+                <Text style={{fontSize:18}}>{userPoints}</Text>
             </View>
         </View>
         <View style={styles.searchBar}>

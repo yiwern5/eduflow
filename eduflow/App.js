@@ -5,11 +5,14 @@ import TabNavigation from './App/Navigations/TabNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { CompleteChapterContext } from './App/Assets/Context/CompleteChapterContext';
 import { useState } from 'react';
+import { UserPointsContext } from './App/Assets/Context/UserPointsContext';
 
 export default function App() {
   const [IsChapComplete, setIsChapComplete]=useState(false);
+  const [userPoints, setUserPoints]=useState();
   return (
     <ClerkProvider publishableKey={'pk_test_YWxpdmUtYWxwYWNhLTcwLmNsZXJrLmFjY291bnRzLmRldiQ'}>
+      <UserPointsContext.Provider value={{userPoints, setUserPoints}}>
       <CompleteChapterContext.Provider value={{IsChapComplete, setIsChapComplete}}>
       <SignedIn>
         <NavigationContainer>
@@ -17,6 +20,7 @@ export default function App() {
         </NavigationContainer>
       </SignedIn>
       </CompleteChapterContext.Provider>
+      </UserPointsContext.Provider>
       <SignedOut>
       <Login />
       </SignedOut>

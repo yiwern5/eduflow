@@ -74,7 +74,7 @@ export const getUserEnrolledCourse=async(courseId, userEmail)=>{
   return result;
 }
 
-export const MarkChapterCompleted=async(chapterId, recordId)=>{
+export const MarkChapterCompleted=async(chapterId, recordId, userEmail, coin)=>{
   const query=gql`
   mutation markChapterCompleted {
     updateUserEnrolledCourse(
@@ -90,7 +90,69 @@ export const MarkChapterCompleted=async(chapterId, recordId)=>{
         }
       }
     }
+
+    updateUserDetail(data: {coin: `+coin+`}, where: {email: "`+userEmail+`"}) {
+      coin
+    }
+    publishUserDetail(where: {email: "`+userEmail+`"}) {
+      id
+    }
   }
+  `
+
+  const result=await request(MASTER_URL,query);
+  return result;
+}
+
+export const createNewUser=async(userName, email, pfpUrl)=>{
+  const query=gql`
+  mutation MyMutation {
+    upsertUserDetail(
+      upsert: {create: {
+        email: "`+email+`", 
+        pfp: "`+pfpUrl+`", 
+        coin: 10, 
+        userName: "`+userName+`"}, 
+        update: {email: "`+email+`", 
+        pfp: "`+pfpUrl+`", 
+        userName: "`+userName+`"}}
+      where: {email: "`+email+`"}
+    ) {
+      id
+    }
+    publishUserDetail(where: {email: "`+email+`"}) {
+      id
+    }
+  }
+  `
+
+  const result=await request(MASTER_URL,query);
+  return result;
+}
+
+export const getUserDetail=async(email)=>{
+  const query=gql`
+  query getUserDetail {
+    userDetail(where: {email: "`+email+`"}) {
+      coin
+    }
+  }
+  `
+
+  const result=await request(MASTER_URL,query);
+  return result;
+}
+
+export const GetAllUsers=async()=>{
+  const query=gql`
+  query getAllUsers {
+    userDetails(orderBy: coin_DESC) {
+      id
+      pfp
+      userName
+      coin
+    }
+  }  
   `
 
   const result=await request(MASTER_URL,query);
