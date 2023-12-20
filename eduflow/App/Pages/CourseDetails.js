@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import DetailsSection from '../Assets/CourseDetails/DetailsSection';
@@ -8,11 +8,13 @@ import { useEffect } from 'react';
 import { enrollCourse, getUserEnrolledCourse} from '../Services';
 import { useUser } from '@clerk/clerk-expo';
 import { ToastAndroid } from 'react-native';
+import { CompleteChapterContext } from '../Assets/Context/CompleteChapterContext';
 
 export default function CourseDetails() {
   const navigation=useNavigation();
   const params=useRoute().params;
   const [userEnrolledCourse, setUserEnrolledCourse]=useState([]);
+  const {IsChapComplete, setIsChapComplete}=useContext(CompleteChapterContext);
   const {user}=useUser();
   useEffect(()=>{
     console.log(params.course);
@@ -20,6 +22,10 @@ export default function CourseDetails() {
       GetUserEnrolledCourse();
     }
   }, [params.course])
+
+  useEffect(()=>{
+    IsChapComplete&&GetUserEnrolledCourse();
+  },[IsChapComplete])
 
   const UserEnrollCourse=()=>{
     enrollCourse(params.course.id, user.primaryEmailAddress.emailAddress).then(resp=>{
@@ -43,7 +49,7 @@ export default function CourseDetails() {
         <Ionicons name="arrow-back" size={35} color="black" />
       </TouchableOpacity>
       <DetailsSection course={params.course} userEnrolledCourse={userEnrolledCourse} enrollCourse={()=>UserEnrollCourse()}/>
-      <ChapterSection chapterList={params.course.chapters}/>
+      <ChapterSection chapterList={params.course.chapters} userEnrolledCourse={userEnrolledCourse}/>
     </ScrollView>
   )
 }

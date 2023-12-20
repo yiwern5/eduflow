@@ -1,18 +1,21 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Content from '../Assets/ChapterContent/Content'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import Result from '../Assets/ChapterContent/Result';
 import Colors from '../Shared/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { MarkChapterCompleted } from '../Services';
+import { CompleteChapterContext } from '../Assets/Context/CompleteChapterContext';
 
 export default function ChapterContent() {
     const params=useRoute().params;
     const [isRun, setIsRun]=useState(false);
     const navigation=useNavigation();
+    const {IsChapComplete, setIsChapComplete}=useContext(CompleteChapterContext);
     const markCompleted=()=>{
         MarkChapterCompleted(params.chapterid, params.courseid);
+        setIsChapComplete(true);
         navigation.goBack();
     }
   return params.content&&(
@@ -33,7 +36,7 @@ export default function ChapterContent() {
             <Result result={params.result?.url}/>
         </>
         :null}
-        <TouchableOpacity style={{marginLeft:20, marginRight:20, padding:20, backgroundColor:Colors.primary, borderRadius:15}}
+        <TouchableOpacity style={{marginLeft:20, marginRight:20, padding:20, backgroundColor:Colors.primary, borderRadius:15, marginTop:20, marginBottom:40}}
         onPress={()=>markCompleted()}>
             <Text style={{fontWeight:'bold', fontSize:15, textAlign:'center'}}>Finish Chapter</Text>
         </TouchableOpacity>
