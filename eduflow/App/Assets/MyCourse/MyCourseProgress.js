@@ -1,12 +1,12 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
-import CourseProgressBar from './CourseProgressBar';
+import CourseProgressBar from '../Home/CourseProgressBar';
 
-export default function CourseItem({item, completedChapter}) {
+export default function MyCourseProgress({item, completedChapter}) {
   return (
-    <View style={{padding:10, backgroundColor:'#fff', marginRight:15, borderRadius:15}}>
-        <Image source={{uri:item?.banner.url}} style={{width:210, height:120, borderTopLeftRadius:15, borderTopRightRadius:15}}/>
+    <View style={{padding:10, backgroundColor:'#fff', borderRadius:15, marginVertical:10}}>
+        <Image source={{uri:item?.banner.url}} style={{width:"100%", height:180, borderTopLeftRadius:15, borderTopRightRadius:15}}/>
         <View style={{}}>
             <Text style={{fontSize:17, fontWeight:'bold', marginTop:10}}>{item.name}</Text>
             <View style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>

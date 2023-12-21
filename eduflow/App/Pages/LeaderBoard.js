@@ -17,12 +17,12 @@ export default function LeaderBoard() {
     })
   }
   return (
-    <ScrollView>
+    <View>
       <View style={{height:300, backgroundColor:Colors.primary, paddingVertical:70, paddingHorizontal:30}}>
         <Text style={{fontWeight:'bold', fontSize:30}}>Leaderboard</Text>
       </View>
 
-      <View style={{marginTop:-150, marginBottom:30}}>
+      <View style={{marginTop:-170, marginBottom:30}}>
         <FlatList 
         data={userList}
         renderItem={({item, index})=>(
@@ -38,6 +38,6 @@ export default function LeaderBoard() {
           </View>
         )}/>
       </View>
-    </ScrollView>
+    </View>
   )
 }
