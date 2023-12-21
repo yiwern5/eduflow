@@ -4,7 +4,9 @@ import React from 'react'
 export default function Profile() {
   return (
     <View>
-      <Text>Profile</Text>
+      <View style={{height:300, backgroundColor:Colors.primary, paddingVertical:70, paddingHorizontal:30}}>
+        <Text style={{fontWeight:'bold', fontSize:30}}>Profile</Text>
+      </View>
     </View>
   )
 }
