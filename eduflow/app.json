@@ -4,28 +4,41 @@
     "slug": "eduflow",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ead9ef"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ywerntsui.eduflow"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#ead9ef"
+      },
+      "package": "com.ywerntsui.eduflow"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "scheme": "eduflow"
+    "scheme": "eduflow",
+    "extra": {
+      "eas": {
+        "projectId": "d2f3993a-ecfe-4ec3-955d-1d2d5279ca6b"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d2f3993a-ecfe-4ec3-955d-1d2d5279ca6b"
+    }
   }
 }
