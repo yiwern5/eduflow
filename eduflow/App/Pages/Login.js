@@ -29,7 +29,7 @@ export default function Login() {
     }, []);
   return (
     <View>
-      <Image source={require('./../Assets/Images/login.png')} />
+      <Image source={require('./../Assets/Images/login.png')} style={{alignSelf:'center'}}/>
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Eduflow</Text>
         <TouchableOpacity onPress={onPress}>
