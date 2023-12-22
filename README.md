@@ -10,13 +10,22 @@ Eduflow is a dynamic education app dedicated to providing students with easy acc
 
 ## Features
 
-- **Learn Anywhere, Anytime**: Enable students to learn easily, whether at home or on the go, fostering a flexible and accessible learning experience.
-- **Effortless Course Enrollment**: Browse and enroll in a diverse range of online courses with just a few clicks.
-- **Real-time Progress Tracking**: Monitor your progress and achievements in real-time via homepage.
-- **Interactive Content**: Immerse yourself in multimedia lessons and interactive learning materials.
-- **Secure and Private**: Rest assured that your educational journey is secure with our robust encryption measures.
+- 👨‍💻 **Seamless Learning**: Enable students to learn easily, whether at home or on the go, fostering a flexible and accessible learning experience.
+- 🎓 **Effortless Course Enrollment**: Browse and enroll in a diverse range of online courses with just a few clicks.
+- ⏳ **Real-time Progress Tracking**: Monitor your progress and achievements in real-time via homepage.
+- 🧸 **Interactive Content**: Immerse yourself in multimedia lessons and interactive learning materials.
+- 🔐 **Secure and Private**: Rest assured that your educational journey is secure with our robust encryption measures.
 
-## Tools Used
+## Language and Tools Used
+<p align="center"> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> </a> 
+<a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="50" height="50"/> </a> 
+<a href="https://docs.expo.dev/" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/E/expo-go-app-logo-BBBE394CB8-seeklogo.com.png" alt="expo" width="50" height="50"/> </a>
+<a href="https://hygraph.com/docs" target="_blank" rel="noreferrer"> <img src="https://cdn.sanity.io/images/o0o2tn5x/production/f9251f397f36329339b1ab5a9100754eb21bb13e-1024x1024.png" alt="hygraph" width="50" height="50"/> </a>
+<a href="https://clerk.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.sanity.io/images/o0o2tn5x/production/2399b991025c365aafaa6fca85d91deac801e654-1046x1046.png" alt="clerk" width="50" height="50"/> </a>
+<a href="https://graphql.org/learn/" target="_blank" rel="noreferrer"> <img src="https://bs-uploads.toptal.io/blackfish-uploads/skill_page/content/logo_file/logo/6212/GraphQL_Logo.svg-490ae3deb7c0f056c849d7463fb8ab39.png" alt="graphql" width="50" height="50"/> </a>
+</p>
+
 - **React Native**:
 React Native is a popular open-source framework for building cross-platform mobile applications using JavaScript and React. It allows developers to write code once and deploy it on both iOS and Android platforms, saving time and resources. With a rich ecosystem and a strong community, React Native enables the development of high-performance, native-like mobile apps.
 
@@ -34,4 +43,4 @@ GraphQL is a query language and runtime for APIs that enables clients to request
 
 ## Getting Started
 1. Install Expo Go on your mobile phone.
-2. Scan the QR code below and try Eduflow via Expo Go!
+2. Scan the QR code above and try Eduflow via Expo Go!
