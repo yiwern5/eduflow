@@ -43,7 +43,7 @@ return isLoaded&&(
           <Text style={{fontSize:18, fontWeight:'bold', margin:10}}>{user.primaryEmailAddress.emailAddress}</Text>
       </View>
 
-      <View style={{padding:24, marginBottom:80}}>
+      <View style={{padding:20, marginBottom:100, backgroundColor:Colors.white, borderRadius:15, margin:20}}>
       <Text
           style={{
             textAlign: 'center',
@@ -86,7 +86,7 @@ return isLoaded&&(
       </View>
       </View>
 
-      <View style={{alignSelf:'center', position:'absolute', bottom: 5}}>
+      <View style={{alignSelf:'center', position:'absolute', bottom: 8}}>
         <TouchableOpacity style={{padding:20, backgroundColor:Colors.primary, borderRadius:15, width:180}}
         onPress={()=>signOut()}>
           <Text style={{fontWeight:'bold', fontSize:18, textAlign:'center'}}>Sign Out</Text>
