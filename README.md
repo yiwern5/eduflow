@@ -43,7 +43,7 @@ GraphQL is a query language and runtime for APIs that enables clients to request
 
 ## Getting Started
 1. Install Expo Go on your mobile phone.
-2. Scan the QR code above and try Eduflow via Expo Go!
+2. Scan the QR code above and try Eduflow via Expo Go.
 
 ## Acknowledgements
 1. Inspired by [TubeGuruji](https://www.youtube.com/@tubeguruji)
