@@ -12,7 +12,7 @@ Eduflow is a dynamic education app dedicated to providing students with easy acc
 
 - 👨‍💻 **Seamless Learning**: Enable students to learn easily, whether at home or on the go, fostering a flexible and accessible learning experience.
 - 🎓 **Effortless Course Enrollment**: Browse and enroll in a diverse range of online courses with just a few clicks.
-- ⏳ **Real-time Progress Tracking**: Monitor your progress and achievements in real-time via homepage.
+- ⏳ **Real-time Progress Tracking**: Monitor your progress and achievements in real-time via home page.
 - 🧸 **Interactive Content**: Immerse yourself in multimedia lessons and interactive learning materials.
 - 🔐 **Secure and Private**: Rest assured that your educational journey is secure with our robust encryption measures.
 
